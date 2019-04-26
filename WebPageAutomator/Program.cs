@@ -57,7 +57,6 @@ namespace WebPageAutomator
         static void startTestCase(object sender, TestCaseEventArgs e) {
 
             Console.WriteLine("Sending test case to model");
-
             model.startTestCase(e.TestCase);            
 
         }

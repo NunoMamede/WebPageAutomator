@@ -14,37 +14,42 @@ namespace WebPageAutomator {
 
     class Model {
 
+        // delegado e evento (baseado no delegado) para a comunicação entre o model e a view
         public delegate void CallViewEventHandler(object source, ResultMessageEventArgs args);
-
         public event CallViewEventHandler CallView;
 
+        // Método para lançar o evento que envia o result para a view
         protected virtual void OnCallView(Result result) {
 
             CallView?.Invoke(this, new ResultMessageEventArgs() { Result = result });
 
         }
 
+        // Driver responsável pela automaçãao web
         private IWebDriver driver = null;
+
+        // Logger onde vai ser adicionada toda a informação individual dos test steps
         private string logger = "";
-               
+
+        // Método que recebe comunicação da View
         public void OnCallingModel(object source, EventArgs e) {
 
             Console.WriteLine("Model called");
 
-            //this.CallView += View.messageFromModel;
-
         }
 
+        // Método principal, responsável pela execução de todos os test steps do test case
         public void startTestCase(TestCase testCase) {
 
-            Console.WriteLine("Model called");
-            Console.WriteLine("starting test case");            
+            Console.WriteLine("starting test case");
 
             try {
 
+                // Executa todos os test steps
                 foreach (TestStep testStep in testCase.TestSteps) {
 
                     string name = testStep.Name;
+                    // Switch principal onde são selecionados os métodos de cada test step
                     switch (name.ToUpper()) {
 
                         case "OPENWEBPAGE":
@@ -113,6 +118,7 @@ namespace WebPageAutomator {
 
                 }
 
+                // Cria resultado de sucesso e com a informação para o logger
                 Result result = new Result(Status.Passed, "Test case concluded with success." + Environment.NewLine + 
                                             "Logger info: " + logger);
 
@@ -124,14 +130,18 @@ namespace WebPageAutomator {
             } catch (Exception e) {
 
                 Console.WriteLine(e.GetBaseException());
+                // Cria resultado de insucesso com a informação da exceção e do logger
                 Result result = new Result(Status.Failed, e.GetBaseException().ToString() + Environment.NewLine +
                                             "Logger info: " + logger);
+
                 // Envia resultado para a view
                 OnCallView(result);
 
             }
 
         }
+
+        // Métodos dos test steps
 
         private IWebDriver openWebPage(string url) {
 
@@ -151,9 +161,7 @@ namespace WebPageAutomator {
 
                 url = "http://" + url;
 
-            }*/
-
-            
+            }*/            
 
             driver.Url = url;
 

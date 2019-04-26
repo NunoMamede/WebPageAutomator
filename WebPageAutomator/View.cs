@@ -14,15 +14,15 @@ namespace WebPageAutomator
     public partial class View : Form
     {
 
-        // delegado e evento baseado no delegado para a comunicação entre a view e o controller
+        // delegado e evento (baseado no delegado) para a comunicação entre a view e o controller
         public delegate void CallControllerEventHandler(object source, TestCaseEventArgs args);
         public event CallControllerEventHandler CallController;
 
-        // delegado e evento baseado no delegado para a comunicação entre a view e o model
+        // delegado e evento (baseado no delegado) para a comunicação entre a view e o model
         public delegate void CallModelEventHandler(object source, EventArgs args);
         public event CallModelEventHandler CallModel;
 
-        // Método para lançar o evento que envia test case para o controller
+        // Método para lançar o evento que envia o test case para o controller
         protected virtual void OnCallController(TestCase testCase) {
 
             CallController?.Invoke(this, new TestCaseEventArgs() { TestCase = testCase });
@@ -72,12 +72,9 @@ namespace WebPageAutomator
             TestStep openWebPage = new TestStep("openWebPage", this.url_txt.Text);
             testCase.addTestStep(openWebPage);
 
-            // Test steps dinâmicos
-            IEnumerable<ComboBox> comboboxes = testStepsPanel.Controls.OfType<ComboBox>();
 
-            int cont = comboboxes.Count();
-
-
+            // IEnumerable<ComboBox> comboboxes = testStepsPanel.Controls.OfType<ComboBox>();
+            // int cont = comboboxes.Count();
             /*for(int i = 0; i < comboboxes.Count(); i++) {
 
                 // Se o input não estiver vazio
@@ -91,9 +88,9 @@ namespace WebPageAutomator
                     testCase.addTestStep(testStep);
 
                 }
-
-
             }*/
+
+            // Test steps dinâmicos
             foreach (var c in testStepsPanel.Controls.OfType<ComboBox>()) {
 
                 // Se o input não estiver vazio
@@ -115,7 +112,7 @@ namespace WebPageAutomator
 
         }
 
-        // Recebe resultado da execução do test case do model
+        // Recebe resultado da execução do test case do model e imprime informação no logger
         public void messageFromModel(object source, ResultMessageEventArgs e) {
 
             Console.WriteLine("Obtained results from model:");
