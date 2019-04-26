@@ -8,14 +8,14 @@ using System.Windows.Forms;
 namespace WebPageAutomator
 {
 
-    //
+    // Event Args para o envio do test case entre a view e o controller
     public class TestCaseEventArgs : EventArgs {
 
         public TestCase TestCase { get; set; }
 
     }
 
-    // 
+    // Event args para o envio dos resultados entre o model e a view
     public class ResultMessageEventArgs : EventArgs {
 
         public Result Result { get; set; }

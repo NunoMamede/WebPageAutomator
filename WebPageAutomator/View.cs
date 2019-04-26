@@ -22,6 +22,20 @@ namespace WebPageAutomator
         public delegate void CallModelEventHandler(object source, EventArgs args);
         public event CallModelEventHandler CallModel;
 
+        // Método para lançar o evento que envia test case para o controller
+        protected virtual void OnCallController(TestCase testCase) {
+
+            CallController?.Invoke(this, new TestCaseEventArgs() { TestCase = testCase });
+
+        }
+
+        // Método para lançar o evento que contacta o model
+        protected virtual void OnCallModel() {
+
+            CallModel?.Invoke(this, EventArgs.Empty);
+
+        }
+
         public View()
         {
             InitializeComponent();
@@ -96,7 +110,7 @@ namespace WebPageAutomator
 
             }
 
-            // Send test case to controller
+            // Envia test case para o controller
             OnCallController(testCase);
 
         }
@@ -110,19 +124,6 @@ namespace WebPageAutomator
 
         }
 
-        // Método para lançar o evento que envia test case para o controller
-        protected virtual void OnCallController(TestCase testCase) {
-
-            CallController?.Invoke(this, new TestCaseEventArgs() { TestCase = testCase });
-
-        }
-
-        // Método para lançar o evento que contacta o model
-        protected virtual void OnCallModel() {
-
-            CallModel?.Invoke(this, EventArgs.Empty);
-
-        }        
-
     }
+
 }
