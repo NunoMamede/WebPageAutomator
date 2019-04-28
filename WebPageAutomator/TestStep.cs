@@ -8,13 +8,19 @@ namespace WebPageAutomator {
 
     public class TestStep {
 
-        string _name;
-        string _value;
+        public string Name { get; set; }
+        public string Value { get; set; }
+        public int Order { get; set; }
+        public int Count { get => _count; set => _count = value; }
+
+        private static int _count = 0;
 
         public TestStep() {
 
             Name = "";
             Value = "";
+            Order = Count + 1;
+            Count++;
 
         }
 
@@ -22,11 +28,17 @@ namespace WebPageAutomator {
 
             Name = name;
             Value = value;
+            Order = Count + 1;
+            Count++;
 
         }
 
-        public string Name { get => _name; set => _name = value; }
-        public string Value { get => _value; set => _value = value; }
+        public static void restartCount() {
+
+            _count = 0;
+
+        }
 
     }
+
 }

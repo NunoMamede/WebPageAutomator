@@ -14,20 +14,23 @@ namespace WebPageAutomator {
 
     public class Result {
 
-        public Status status { get; set; }
-        public string resultMessage { get; set; }
+        public Status Status { get; set; }
+        public string ResultMessage { get; set; }
+        public string ImagePath { get; set; }
 
         public Result() {
             
-            this.status = Status.Error;
-            this.resultMessage = "";
+            this.Status = Status.Error;
+            this.ResultMessage = "";
+            this.ImagePath = "";
 
         }
 
-        public Result(Status status, string resultMessage) {
+        public Result(Status status, string resultMessage, string imagePath) {
 
-            this.status = status;
-            this.resultMessage = resultMessage;
+            this.Status = status;
+            this.ResultMessage = resultMessage;
+            this.ImagePath = imagePath;
 
         }
 

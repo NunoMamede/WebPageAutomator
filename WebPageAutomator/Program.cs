@@ -31,13 +31,13 @@ namespace WebPageAutomator
         static Model model = null;
         static View view = null;
 
+        public static log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         [STAThread]
-        static void Main()
-        {
+        static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            
             model = new Model();
             view = new View();
 
@@ -56,9 +56,10 @@ namespace WebPageAutomator
         // Método que recebe a mensagem com o test case da view e reencaminha para o model
         static void startTestCase(object sender, TestCaseEventArgs e) {
 
-            Console.WriteLine("Sending test case to model");
+            log.Info("Sending test case to model");
             model.startTestCase(e.TestCase);            
 
         }
+
     }
 }
