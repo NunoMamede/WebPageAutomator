@@ -13,8 +13,10 @@ namespace WebPageAutomator {
         public int Order { get; set; }
         public int Count { get => _count; set => _count = value; }
 
+        // Atributo estático que contabiliza o número de test steps instanciados
         private static int _count = 0;
 
+        // Construtores
         public TestStep() {
 
             Name = "";
@@ -33,6 +35,7 @@ namespace WebPageAutomator {
 
         }
 
+        // Permite reiniciar a contagem de test steps instanciados
         public static void restartCount() {
 
             _count = 0;

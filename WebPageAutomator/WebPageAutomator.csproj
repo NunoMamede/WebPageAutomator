@@ -52,20 +52,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MessageRegistry.cs" />
-    <Compile Include="Result.cs" />
-    <Compile Include="TestCase.cs" />
-    <Compile Include="TestStep.cs" />
-    <Compile Include="View.cs">
+    <Compile Include="Exceptions\TestStepException.cs" />
+    <Compile Include="Model\TestStepExecutor.cs" />
+    <Compile Include="Support\MessageRegistry.cs" />
+    <Compile Include="Support\Result.cs" />
+    <Compile Include="Support\TestCase.cs" />
+    <Compile Include="Support\TestStep.cs" />
+    <Compile Include="View\View.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View.Designer.cs">
+    <Compile Include="View\View.Designer.cs">
       <DependentUpon>View.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model.cs" />
+    <Compile Include="Model\Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View.resx">
+    <EmbeddedResource Include="View\View.resx">
       <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

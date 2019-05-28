@@ -36,12 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.url_txt = new System.Windows.Forms.TextBox();
             this.testStepsPanel = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.loggerPanel = new System.Windows.Forms.Panel();
-            this.logger_lbl = new System.Windows.Forms.Label();
-            this.addRow_btn = new System.Windows.Forms.Button();
             this.teststepsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -52,6 +48,7 @@
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -62,11 +59,14 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
+            this.loggerPanel = new System.Windows.Forms.Panel();
+            this.logger_lbl = new System.Windows.Forms.Label();
+            this.addRow_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.screenshotBox)).BeginInit();
             this.testCasePanel.SuspendLayout();
             this.testStepsPanel.SuspendLayout();
-            this.loggerPanel.SuspendLayout();
             this.teststepsTable.SuspendLayout();
+            this.loggerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // start_btn
@@ -138,53 +138,6 @@
             this.testStepsPanel.Size = new System.Drawing.Size(466, 309);
             this.testStepsPanel.TabIndex = 1;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(187, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(266, 20);
-            this.textBox1.TabIndex = 7;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 13;
-            this.comboBox1.Location = new System.Drawing.Point(3, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // loggerPanel
-            // 
-            this.loggerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.loggerPanel.Controls.Add(this.logger_lbl);
-            this.loggerPanel.Location = new System.Drawing.Point(12, 445);
-            this.loggerPanel.Name = "loggerPanel";
-            this.loggerPanel.Size = new System.Drawing.Size(1246, 114);
-            this.loggerPanel.TabIndex = 4;
-            // 
-            // logger_lbl
-            // 
-            this.logger_lbl.AutoSize = true;
-            this.logger_lbl.Cursor = System.Windows.Forms.Cursors.Default;
-            this.logger_lbl.Location = new System.Drawing.Point(5, 4);
-            this.logger_lbl.Name = "logger_lbl";
-            this.logger_lbl.Size = new System.Drawing.Size(40, 13);
-            this.logger_lbl.TabIndex = 0;
-            this.logger_lbl.Text = "Logger";
-            // 
-            // addRow_btn
-            // 
-            this.addRow_btn.Enabled = false;
-            this.addRow_btn.Location = new System.Drawing.Point(12, 416);
-            this.addRow_btn.Name = "addRow_btn";
-            this.addRow_btn.Size = new System.Drawing.Size(75, 23);
-            this.addRow_btn.TabIndex = 5;
-            this.addRow_btn.Text = "Add line";
-            this.addRow_btn.UseVisualStyleBackColor = true;
-            this.addRow_btn.Click += new System.EventHandler(this.addRow_btn_Click);
-            // 
             // teststepsTable
             // 
             this.teststepsTable.AutoSize = true;
@@ -230,6 +183,16 @@
             this.teststepsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.teststepsTable.Size = new System.Drawing.Size(459, 297);
             this.teststepsTable.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 13;
+            this.comboBox1.Location = new System.Drawing.Point(3, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(173, 21);
+            this.comboBox1.TabIndex = 0;
             // 
             // comboBox2
             // 
@@ -331,6 +294,13 @@
             this.comboBox11.Size = new System.Drawing.Size(173, 21);
             this.comboBox11.TabIndex = 17;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(187, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(266, 20);
+            this.textBox1.TabIndex = 7;
+            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(187, 30);
@@ -401,6 +371,36 @@
             this.textBox11.Size = new System.Drawing.Size(266, 20);
             this.textBox11.TabIndex = 27;
             // 
+            // loggerPanel
+            // 
+            this.loggerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.loggerPanel.Controls.Add(this.logger_lbl);
+            this.loggerPanel.Location = new System.Drawing.Point(12, 445);
+            this.loggerPanel.Name = "loggerPanel";
+            this.loggerPanel.Size = new System.Drawing.Size(1246, 114);
+            this.loggerPanel.TabIndex = 4;
+            // 
+            // logger_lbl
+            // 
+            this.logger_lbl.AutoSize = true;
+            this.logger_lbl.Cursor = System.Windows.Forms.Cursors.Default;
+            this.logger_lbl.Location = new System.Drawing.Point(5, 4);
+            this.logger_lbl.Name = "logger_lbl";
+            this.logger_lbl.Size = new System.Drawing.Size(40, 13);
+            this.logger_lbl.TabIndex = 0;
+            this.logger_lbl.Text = "Logger";
+            // 
+            // addRow_btn
+            // 
+            this.addRow_btn.Enabled = false;
+            this.addRow_btn.Location = new System.Drawing.Point(12, 416);
+            this.addRow_btn.Name = "addRow_btn";
+            this.addRow_btn.Size = new System.Drawing.Size(75, 23);
+            this.addRow_btn.TabIndex = 5;
+            this.addRow_btn.Text = "Add line";
+            this.addRow_btn.UseVisualStyleBackColor = true;
+            this.addRow_btn.Click += new System.EventHandler(this.addRow_btn_Click);
+            // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,17 +413,17 @@
             this.Controls.Add(this.start_btn);
             this.Controls.Add(this.title_lbl);
             this.Name = "View";
-            this.Text = "Form1";
+            this.Text = "WebPageAutomator";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.screenshotBox)).EndInit();
             this.testCasePanel.ResumeLayout(false);
             this.testCasePanel.PerformLayout();
             this.testStepsPanel.ResumeLayout(false);
             this.testStepsPanel.PerformLayout();
-            this.loggerPanel.ResumeLayout(false);
-            this.loggerPanel.PerformLayout();
             this.teststepsTable.ResumeLayout(false);
             this.teststepsTable.PerformLayout();
+            this.loggerPanel.ResumeLayout(false);
+            this.loggerPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

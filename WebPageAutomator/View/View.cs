@@ -45,6 +45,7 @@ namespace WebPageAutomator
             loggerPanel.AutoScroll = true;
         }
 
+        // Carregamento do formulário
         private void Form1_Load(object sender, EventArgs e)
         {
 

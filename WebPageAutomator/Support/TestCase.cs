@@ -8,8 +8,11 @@ namespace WebPageAutomator {
     
     public class TestCase {
 
-       private List<TestStep> _testSteps;
+        // Atributo que contém a lista de test steps
+        private List<TestStep> _testSteps;
+        public List<TestStep> TestSteps { get => _testSteps; set => _testSteps = value; }
 
+        // Construtores
         public TestCase() {
 
             TestSteps = new List<TestStep>();
@@ -22,8 +25,7 @@ namespace WebPageAutomator {
 
         }
 
-        public List<TestStep> TestSteps { get => _testSteps; set => _testSteps = value; }
-
+        // Método que permite adicionar um novo test step à lista que compõe o test case
         public void addTestStep(TestStep testStep) {
 
             TestSteps.Add(testStep);

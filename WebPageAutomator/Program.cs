@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebPageAutomator.Model;
 
 namespace WebPageAutomator
 {
@@ -28,7 +29,7 @@ namespace WebPageAutomator
         /// Esta classe principal serve de ponto de partida e tem o papel de controller
         /// </summary>
 
-        static Model model = null;
+        static Model.Model model = null;
         static View view = null;
 
         public static log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -38,7 +39,7 @@ namespace WebPageAutomator
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            model = new Model();
+            model = new Model.Model();
             view = new View();
 
             // Subscrições
