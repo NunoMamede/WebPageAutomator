@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace WebPageAutomator {
 
+    // Estado final de uma execução
     public enum Status {
 
         Passed, Failed, Error, Warning,
 
     }
 
+    // Classe auxiliar que permite partilhar resultados das execuções entre componentes de MVC
     public class Result {
 
         public Status Status { get; set; }

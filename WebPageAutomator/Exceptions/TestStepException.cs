@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebPageAutomator.Exceptions {
 
+    // Exceção específica para a execução dos test steps
     public class TestStepException : Exception {
 
         public TestStepException() { }

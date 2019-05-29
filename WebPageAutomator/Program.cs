@@ -36,6 +36,7 @@ namespace WebPageAutomator
 
         [STAThread]
         static void Main() {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
@@ -57,7 +58,7 @@ namespace WebPageAutomator
         // Método que recebe a mensagem com o test case da view e reencaminha para o model
         static void startTestCase(object sender, TestCaseEventArgs e) {
 
-            log.Info("Sending test case to model");
+            //log.Info("Sending test case to model");
             model.startTestCase(e.TestCase);            
 
         }

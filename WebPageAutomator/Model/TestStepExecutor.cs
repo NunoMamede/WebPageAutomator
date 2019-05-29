@@ -14,6 +14,7 @@ namespace WebPageAutomator.Model {
 
     public class TestStepExecutor {
 
+        // Driver do Selenium que será responsável pela automação
         public static IWebDriver Driver { get => _driver; set => _driver = value; }
 
         private static IWebDriver _driver = null;
@@ -24,6 +25,7 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Função que executa os test steps
         public void executeTestStep(MessageRegistry messageRegistry, TestStep testStep) {
 
             string name = testStep.Name;
@@ -110,6 +112,7 @@ namespace WebPageAutomator.Model {
 
         // Métodos dos test steps
 
+        // Open web page - instancia chrome driver que vai ser responsável pela automação 
         private static IWebDriver openWebPage(MessageRegistry messageRegistry, string url) {
 
             try {
@@ -149,12 +152,13 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Clica no elemento definido pelo id
         private static void clickOnElementById(MessageRegistry messageRegistry, string id) {
 
             try {
 
                 messageRegistry.addLine("Atempting to click on element with id " + id);
-
+                
                 Driver.FindElement(By.Id(id)).Click();
 
                 messageRegistry.addLine("Element with id " + id + " clicked with success");
@@ -167,12 +171,13 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Clica no elemento definido pelo xpath
         private static void clickOnElementByXPath(MessageRegistry messageRegistry, string xpath) {
 
             try {
 
                 messageRegistry.addLine("Atempting to click on element with xpath " + xpath);
-
+                
                 Driver.FindElement(By.XPath(xpath)).Click();
 
                 messageRegistry.addLine("Element with xpath " + xpath + " clicked with success");
@@ -185,12 +190,13 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Clica no elemento definido pelo css selector
         private static void clickOnElementByCssSelector(MessageRegistry messageRegistry, string CssSelector) {
 
             try {
 
                 messageRegistry.addLine("Atempting to click on element with CSS selector " + CssSelector);
-
+                
                 Driver.FindElement(By.CssSelector(CssSelector)).Click();
 
                 messageRegistry.addLine("Element with CSS selector " + CssSelector + " clicked with success");
@@ -203,12 +209,13 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Obtém o texto do elemento definido pelo id
         private static string getElementTextById(MessageRegistry messageRegistry, string id) {
 
             try {
 
                 messageRegistry.addLine("Atempting to get element text by id: " + id);
-
+                
                 string text = Driver.FindElement(By.Id(id)).Text;
 
                 messageRegistry.addLine("Element text by id " + id + "successfully obtained: " + text);
@@ -223,6 +230,7 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Obtém o texto do elemento definido pelo xpath
         private static string getElementTextByXPath(MessageRegistry messageRegistry, string xpath) {
 
             try {
@@ -243,6 +251,7 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Faz scroll até ao elemento definido pelo id
         private static void scrollToElementById(MessageRegistry messageRegistry, string id) {
 
             try {
@@ -265,6 +274,7 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Faz scroll até ao elemento definido pelo xpath
         private static void scrollToElementByXPath(MessageRegistry messageRegistry, string xpath) {
 
             try {
@@ -287,6 +297,7 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Faz scroll até ao final da página
         private static void scrollDown(MessageRegistry messageRegistry) {
 
             try {
@@ -300,9 +311,9 @@ namespace WebPageAutomator.Model {
 
             }
 
-
         }
 
+        // Faz scroll vertical por um número definido de pixeis
         private static void scrollBy(MessageRegistry messageRegistry, int pixels) {
 
             try {
@@ -318,6 +329,7 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Navega para a página anterior
         private static void navigateBack(MessageRegistry messageRegistry) {
 
             try {
@@ -334,6 +346,7 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Navega para a página seguinte
         private static void navigateForward(MessageRegistry messageRegistry) {
 
             try {
@@ -350,6 +363,7 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Pausa a execução por um dado número de milisegundos
         private static void sleep(MessageRegistry messageRegistry, int milliseconds) {
 
             try {
@@ -366,6 +380,7 @@ namespace WebPageAutomator.Model {
 
         }
 
+        // Tira screenshot da página
         public string takeScreenshot(MessageRegistry messageRegistry) {
 
             try {
